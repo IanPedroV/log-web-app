@@ -1,0 +1,44 @@
+<div class='container' style="height: 90vh;">
+    <div class='row h-100 justify-content-center align-items-center'>
+        <div class='mx-auto col-sm-6'>
+            <h1 class="display-4">Log Upload</h1>
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Select below your .txt log file to be upload.
+                        You can also type a log line in the other form.
+                    </label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin: 50">Enviar</button>
+            </form>
+        </div>
+        <div class="mx-auto col-sm-6">
+            <h1 class="display-4">Raw log line<a class="btn shadow btn-sm align-top" placement="top"
+                ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top">?</a></h1>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <input type="text" class="form-control" id="data" placeholder="Data">
+                    </div>
+                    <div class="form-group col">
+                        <input type="text" class="form-control" id="ip" placeholder="IP">
+                    </div>
+                    <div class="form-group col">
+                        <input type="text" class="form-control" id="request" placeholder="Request">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-3">
+                        <input type="text" class="form-control" id="code" placeholder="Code">
+                    </div>
+                    <div class="form-group col-9">
+                        <input type="text" class="form-control" id="userAgent" placeholder="User Agent">
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
