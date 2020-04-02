@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
+
   { path: 'addlog', component: AddLogComponent },
   { path: 'filterlog', component: FilterLogComponent }
 ];
