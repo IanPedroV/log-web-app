@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LogServiceService } from '../services/log-service.service';
 import { Log } from '../models/log';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-add-log',
