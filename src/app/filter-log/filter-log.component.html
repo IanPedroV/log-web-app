@@ -1,27 +1,40 @@
 <div class='container' style="height: 90vh;">
-    <div class='row h-100 justify-content-center align-items-center'>
-        <div class='mx-auto col-sm-6'>
-            <h1 class="display-4 pb-4">Search your log:</h1>
-            <form action="">
-                <div class="form-row">
-                    <div class="form-group col-3">
-                        <select class="form-control" id="inlineFormCustomSelectPref">
-                            <option selected>Choose...</option>
-                            <option value="1">Id</option>
-                            <option value="2">Data</option>
-                            <option value="3">Ip</option>
-                            <option value="4">Status</option>
-                            <option value="5">User Agent</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-9">
-                        <input type="text" class="form-control" id="userAgent">
-                    </div>
-                </div>
-                <div class="text-right">
-                    <a href="#" class="btn btn-primary">Search</a>
-                </div>
-            </form>
+  <div class='row h-100 justify-content-center align-items-center'>
+    <div class='mx-auto col-sm-6'>
+      <h1 class="display-4 pb-4">Search your log:</h1>
+
+      <form [formGroup]="formGroup">
+        <div class="form-row">
+          <div class="form-group col-3">
+            <select class="form-control" (change)="changeSearchField($event)" id="inlineFormCustomSelectPref">
+              <option value="dateRange">Date Range</option>
+              <option value="ip" selected>Ip</option>
+            </select>
+          </div>
+          <div class="form-group col-8">
+            <input type="text" class="form-control" formControlName="ip" (keyup)="onKeyUp($event)" id="ip"
+              *ngIf="getSearchField() == 'ip' || getSearchField() == undefined">
+            <input type="text" class="form-control" (keyup)="onKeyUp($event)" id="dateRange"
+              *ngIf="getSearchField() == 'dateRange'" formControlName="dateRange">
+          </div>
+          <a class="btn shadow btn-sm align-top p-0" placement="top" ngbPopover="Ip: 192.169.1.1 Date: begin_end, example: 2019-01-01 00:00:11.763_2019-01-01 00:00:21.164"
+            popoverTitle="Search format">?</a>
         </div>
+      </form>
     </div>
+    <table class="table" *ngIf="results">
+      <thead>
+        <th *ngFor="let column of headers">
+          {{column}}
+        </th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results | slice: 0:30">
+          <td *ngFor="let column of headers">
+            {{result[column]}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

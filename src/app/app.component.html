@@ -15,17 +15,19 @@
       <li class="nav-item" [routerLinkActive]="['active']" routerLink="/filterlog">
         <a class="nav-link" href="/filterlog" [routerLinkActive]="['active']">Filter Log</a>
       </li>
-      <li class="nav-item" [routerLinkActive]="['active']" routerLink="/dashboard">
+      <!-- <li class="nav-item" [routerLinkActive]="['active']" routerLink="/dashboard">
         <a class="nav-link" href="/dashboard" [routerLinkActive]="['active']">Dashboard</a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>
 
 <router-outlet></router-outlet>
 
-<footer class="footer" style="position: absolute; bottom: 0; width: 100%; height: 60px;">
-  <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
-  </div>
+<footer>
+    <div style="position:fixed;bottom:0px;" flex>
+      <div class="container">
+        <span class="text-muted">Log admin.</span>
+      </div>
+    </div>
 </footer>

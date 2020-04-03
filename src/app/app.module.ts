@@ -8,6 +8,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddLogComponent } from './add-log/add-log.component';
 import { FilterLogComponent } from './filter-log/filter-log.component';
 import { HomeComponent } from './home/home.component';
+import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,18 @@ import { HomeComponent } from './home/home.component';
     FilterLogComponent,
     HomeComponent
   ],
+
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    NgBootstrapFormValidationModule.forRoot(),
+    NgBootstrapFormValidationModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
